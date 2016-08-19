@@ -1,15 +1,30 @@
-body{
+body,html{
 	font-family: Lato, Arial, sans-serif;
 	/*background-color: #008B8B;*/
+
+	/*background-color: #008B8B;*/
+	margin: 0 auto;
+	
+
+}
+
+.main-body1{
+  width:100%;
+  margin: 0 auto;
+  /* PQ O HEIGHT DO NAVIGATION EH 50PX + 1PX DE BORDER + 15PX DE CADA PADDING*/
+  margin-top: 81px;
+  
 }
 
 /* DELIMITA O CORPO QUE TEM CONTEUDO, OCUPANDO 80% DO WIDTH */
 .main-body{
   width:80%;
   margin: auto;
-  /* PQ O HEIGHT DO NAVIGATION EH 50PX + 1PX DE BORDER + 15PX DE CADA PADDING*/
-  margin-top: 83px;
+
+ 
 }
+
+
 
 @media screen and (max-width: 500px){
 	.main-body{
@@ -22,6 +37,8 @@ body{
   width: 100%;
   border-radius: 0px;
   padding: 0px 20px 0px 20px;
+  background-color: #000000;
+
 
   /* PARA O NAV FICAR EM CIMA DO BACKGROUND DO DIV */
   /*background-color: transparent;
@@ -30,16 +47,34 @@ body{
 }
 
 .nav-logo{
-/*	padding: 5px;*/
+	padding: 10px;
 }
+
+/* GAMBIARRA PRA A IMAGEM DA LOGO NAO FICAR FORA DA NAVBAR-BRAND. TEM QUE BOTAR ESSE PADDING!!
+TEM NESSE LINK: https://blackrockdigital.github.io/startbootstrap-logo-nav/ */
+.navbar-custom .navbar-brand{
+	padding: 0 15px; 
+}
+
 
 .navbar-custom{
 	/*vertical-align: center;*/
-	padding: 15px 20px;
+	padding: 15px 100px;
 	font-weight: 700;
 
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 500px){
+	.navbar-custom{
+		padding: 0;
+	}
+
+	/* PRA O HEADER TER UM PADDING E NAO ACABAR O HEADER ASSIM Q ACABA A IMAGEM */
+	.navbar-header{
+		padding: 15px 0;
+	}
 }
 
 /* Ao redor do nav-contact tinha uma div pra destacar */
@@ -70,7 +105,7 @@ body{
 /* DEIXANDO TODAS AS IMAGENS DO CAROUSEL COM A MESMA ALTURA (JA Q SAO IMGS COM TAMANHOS DIFERENTES) */
 .carousel-inner .item img{
 	width: 100%;
-	height: 800px;
+	height: 850px;
 }
 
 @media screen and (max-width: 500px){
@@ -84,7 +119,7 @@ body{
 	.carousel-caption {
 	    right: 20%;
 	    left: 20%;
-	    padding-bottom: 300px;
+	    padding-bottom: 200px;
 	}
 }
 
@@ -125,7 +160,7 @@ body{
 	/* NOVO CODIGO PRA FICAR IGUAL AO TYPIFY TEMPLATE */
 	background-color: #00cdcf;
 	padding: 1.1em;
-	 QUANDO SET O WIDTH OR HEIGHT DE UM INLINE ELE SE COMPORTA COMO BLOCK
+	/* QUANDO SET O WIDTH OR HEIGHT DE UM INLINE ELE SE COMPORTA COMO BLOCK
 	ENTAO ELE FICARIA NO CANTO ESQUERDO. PRA ELE SE COMPORTAR COMO INLINE DE NOVO
 	E IR PRO MEIO TEMOS QUE EXPLICITAR O DISPLAY
 	/*Servia quando eu nao tava usando o bootstrap col-sm-6*/
@@ -166,10 +201,17 @@ body{
 ----------------------------------------------------------------------------*/
 .goals{
     /*background-color: #cff5fb;*/
-    background-color: #009999;
+    /*background-color: #009999;*/
     /* border-top: 1px solid #adadad; */
     min-height: 350px;
-    padding-top: 5em;
+    padding-top: 6em;
+
+}
+
+@media screen and (max-width: 500px){
+	.goals{
+		padding-top: 3em;
+	}
 }
 
 .goals i{
@@ -180,7 +222,9 @@ body{
 .goal-box{
 /*	height: 550px;*/
 	text-align: center;
-	padding-top: 50px;
+	padding-top: 30px;
+	border: 10px #FFFFFF solid;
+	background-color: #F5F5F5;
 }
 
 @media screen and (max-width: 500px){
@@ -298,8 +342,9 @@ hr {
 /* SESSION DO PORTFOLIO */
 
 .portfolio{
-	background-color: #009999;
+	
 	padding: 50px 0;
+	
 }
 
 .section-heading{
@@ -307,11 +352,15 @@ hr {
   margin-top: 0;
   margin-bottom: 35px;
   text-transform: uppercase;
+  border-bottom:1px #4682B4 solid;
+  border-top: 1px #4682B4 solid;
+
 }
 
 .portfolio-item{
 	/*background-color: #f3f3f3;*/
 	margin-bottom: 30px;
+	
 }
 
 /*@media screen and (max-width: 990px){
@@ -327,20 +376,24 @@ hr {
 
 	/*min-width: 214px;*/
 	min-height: 210px;
+
+
 }
 
 .portfolio-startup-img{
-	background-color: #f3f3f3;
+	background-color: 	#FFFFFF;
 	position: relative;
 	/*min-width: 210px;*/
 	max-width: 400px;
 	height: 210px;
+	border:3px #F5F5F5 solid;
 }
 
 .portfolio-caption{
 	max-width: 400px;
-	background-color: white;
+	background-color:#F5F5F5;
 	padding: 15px;
+
 }
 
 .portfolio-caption h4{
@@ -361,7 +414,7 @@ hr {
 }
 
 .portfolio-hover{
-	background: rgba(254, 209, 54, 0.9);
+	background: rgba(113, 143, 200, 0.7);
 
 	/* FAZ ABSOLUTE PRA ELE PEGAR 100% DE HEIGHT E WIDTH EM RELACAO AO PORTFOLIO-LINK*/
 	position: absolute;
@@ -428,6 +481,10 @@ hr {
     font-size: 5em;
 }
 
+.portfolio-sub-title{
+	text-align: left;
+}
+
 @media screen and (max-width: 500px){
 	.portfolio-title{
 		font-size: 3em;
@@ -453,6 +510,7 @@ hr {
 
 .parceiros{
 	padding: 50px 0;
+
 }
 
 .parceiros-logo{
@@ -484,7 +542,7 @@ hr {
 */
 
 .contact{
-	background: #f3f3f3;
+	
 	/*height: 600px;*/
 	padding-top: 50px;
 	padding-bottom: 100px;
@@ -563,15 +621,25 @@ hr {
 /* FOOTER */
 
 .footer{
-	background-color: #38A5DB;
+	background-color: #000000;
 	/*height: 150px;*/
 	box-shadow: 0 -4px 0 rgba(0,0,0,0.1);
 	padding: 30px 50px;
 }
 
+@media screen and (max-width: 500px){
+	.footer{
+		padding: 15px;
+	}
+}
+
 .footer-body{	
 	width: 80%;
 	margin: auto;
+
+	/* COMO O SOCIAL-LINKS USA O FLOAT:RIGHT ELE FICA FORA DO DESIGN FLOW ENTAO EH COMO SE ELE NAO 
+	FOSSE CONSIDERADO E A DIV NAO WRAP AROUND IT. PRA FAZER Q A DIV CONSIDERE TEM Q USAR ESSE OVERFLOW*/
+	overflow: auto;
 }
 
 .footer p{
@@ -579,6 +647,7 @@ hr {
 	/*display: inline-block;
 	float: left;*/
 	margin: 0;
+	color: white;
 }
 
 .footer p:nth-child(3){
@@ -586,7 +655,7 @@ hr {
 }
 
 .footer img{
-	margin-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 .social-links{
@@ -595,6 +664,12 @@ hr {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+@media screen and (max-width: 500px){
+	.social-links{
+		padding-top: 10px;
+	}
 }
 
 .social-links li{
